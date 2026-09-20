@@ -1,0 +1,705 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #080b12;
+  color: #f8fafc;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  background: rgba(8, 11, 18, 0.94);
+  backdrop-filter: blur(14px);
+
+  border-bottom: 1px solid #1e293b;
+}
+
+.navbar {
+  width: min(1200px, 92%);
+  min-height: 72px;
+
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+.logo {
+  color: white;
+  text-decoration: none;
+
+  font-size: 27px;
+  font-weight: 900;
+}
+
+.logo span,
+footer span {
+  color: #22c55e;
+}
+
+nav {
+  display: flex;
+  gap: 24px;
+}
+
+nav a {
+  color: #cbd5e1;
+
+  text-decoration: none;
+
+  transition: 0.2s;
+}
+
+nav a:hover {
+  color: #4ade80;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+  min-height: 460px;
+
+  display: flex;
+  align-items: center;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(34, 197, 94, 0.18),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(37, 99, 235, 0.12),
+      transparent 35%
+    ),
+    #080b12;
+}
+
+.hero-content {
+  width: min(900px, 92%);
+  margin: auto;
+}
+
+.hero-badge {
+  display: inline-block;
+
+  padding: 8px 14px;
+  margin-bottom: 20px;
+
+  border: 1px solid #285a3a;
+  border-radius: 999px;
+
+  background: rgba(20, 83, 45, 0.25);
+
+  color: #86efac;
+
+  font-size: 14px;
+}
+
+.hero h1 {
+  margin: 0;
+
+  font-size: clamp(42px, 7vw, 70px);
+  line-height: 1.05;
+}
+
+.hero h1 span {
+  display: block;
+  color: #22c55e;
+}
+
+.hero p {
+  max-width: 650px;
+
+  margin: 24px auto;
+
+  color: #94a3b8;
+
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   SEARCH
+========================================= */
+
+.search-box {
+  max-width: 760px;
+
+  margin: 35px auto 0;
+
+  display: flex;
+
+  overflow: hidden;
+
+  border: 1px solid #334155;
+  border-radius: 14px;
+
+  background: #111827;
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.search-box input {
+  flex: 1;
+  min-width: 0;
+
+  padding: 19px 22px;
+
+  border: 0;
+  outline: none;
+
+  background: transparent;
+
+  color: white;
+
+  font-size: 17px;
+}
+
+.search-box input::placeholder {
+  color: #64748b;
+}
+
+.search-box button {
+  padding: 0 30px;
+
+  border: none;
+
+  cursor: pointer;
+
+  background: #22c55e;
+
+  color: #052e16;
+
+  font-weight: 900;
+
+  transition: 0.2s;
+}
+
+.search-box button:hover {
+  background: #4ade80;
+}
+
+.catalog-info {
+  margin-top: 20px;
+
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+main {
+  width: min(1200px, 92%);
+
+  margin: auto;
+}
+
+.catalog-section {
+  padding: 65px 0;
+}
+
+.section-header {
+  margin-bottom: 30px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 25px;
+}
+
+.section-header h2 {
+  margin: 0;
+
+  font-size: 31px;
+}
+
+.section-header p {
+  margin: 8px 0 0;
+
+  color: #64748b;
+}
+
+
+/* =========================================
+   RANKING MENU
+========================================= */
+
+.ranking-menu {
+  display: flex;
+
+  gap: 10px;
+
+  flex-wrap: wrap;
+
+  margin-bottom: 35px;
+
+  padding: 10px;
+
+  border: 1px solid #202938;
+  border-radius: 14px;
+
+  background: #0f141d;
+}
+
+.ranking-button {
+  padding: 12px 17px;
+
+  border: 1px solid #2a3548;
+  border-radius: 9px;
+
+  background: #151b26;
+
+  color: #cbd5e1;
+
+  cursor: pointer;
+
+  font-weight: 700;
+
+  transition: 0.2s;
+}
+
+.ranking-button:hover {
+  background: #202938;
+
+  color: white;
+}
+
+.ranking-button.active {
+  border-color: #22c55e;
+
+  background: #12311e;
+
+  color: #86efac;
+}
+
+
+/* =========================================
+   GRID
+========================================= */
+
+.games-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 25px;
+}
+
+
+/* =========================================
+   GAME CARD
+========================================= */
+
+.game-card {
+  overflow: hidden;
+
+  border: 1px solid #202b3c;
+  border-radius: 16px;
+
+  background: #111722;
+
+  transition:
+    transform 0.25s,
+    border-color 0.25s,
+    box-shadow 0.25s;
+}
+
+.game-card:hover {
+  transform: translateY(-7px);
+
+  border-color: #3b4a63;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+.game-image {
+  position: relative;
+
+  width: 100%;
+  height: 165px;
+
+  overflow: hidden;
+
+  background: #1f2937;
+}
+
+.game-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.35s;
+}
+
+.game-card:hover .game-image img {
+  transform: scale(1.05);
+}
+
+.discount {
+  position: absolute;
+
+  top: 10px;
+  right: 10px;
+
+  padding: 7px 10px;
+
+  border-radius: 8px;
+
+  background: #22c55e;
+
+  color: #052e16;
+
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.game-body {
+  padding: 20px;
+}
+
+.game-name {
+  min-height: 48px;
+
+  margin: 0 0 15px;
+
+  font-size: 19px;
+  line-height: 1.3;
+}
+
+
+/* =========================================
+   PRICE
+========================================= */
+
+.price-row {
+  min-height: 32px;
+
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+.old-price {
+  color: #64748b;
+
+  font-size: 14px;
+
+  text-decoration: line-through;
+}
+
+.price {
+  color: white;
+
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.free-price {
+  color: #4ade80;
+
+  font-size: 21px;
+  font-weight: 900;
+}
+
+.no-price {
+  color: #64748b;
+}
+
+
+/* =========================================
+   METACRITIC
+========================================= */
+
+.metacritic {
+  display: inline-block;
+
+  margin-top: 12px;
+
+  padding: 6px 9px;
+
+  border: 1px solid #334155;
+  border-radius: 7px;
+
+  background: #1f2937;
+
+  color: #facc15;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+
+/* =========================================
+   STEAM BUTTON
+========================================= */
+
+.steam-button {
+  display: block;
+
+  margin-top: 19px;
+
+  padding: 12px;
+
+  border-radius: 9px;
+
+  background: #2563eb;
+
+  color: white;
+
+  text-align: center;
+  text-decoration: none;
+
+  font-weight: 800;
+
+  transition: 0.2s;
+}
+
+.steam-button:hover {
+  background: #1d4ed8;
+}
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+.status {
+  padding: 28px;
+
+  border: 1px solid #202938;
+  border-radius: 13px;
+
+  background: #10151e;
+
+  color: #94a3b8;
+
+  text-align: center;
+}
+
+.hidden {
+  display: none !important;
+}
+
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.secondary-button {
+  padding: 11px 17px;
+
+  border: 1px solid #334155;
+  border-radius: 9px;
+
+  background: #111827;
+
+  color: #f8fafc;
+
+  cursor: pointer;
+
+  font-weight: 700;
+}
+
+.secondary-button:hover {
+  background: #1e293b;
+}
+
+
+/* =========================================
+   PAGINATION
+========================================= */
+
+.pagination {
+  margin-top: 45px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 7px;
+}
+
+.page-button {
+  min-width: 42px;
+  height: 42px;
+
+  padding: 0 12px;
+
+  border: 1px solid #2a3445;
+  border-radius: 7px;
+
+  background: #171b22;
+
+  color: #d1d5db;
+
+  cursor: pointer;
+
+  font-weight: 700;
+
+  transition: 0.2s;
+}
+
+.page-button:hover:not(:disabled) {
+  background: #252b35;
+
+  border-color: #475569;
+}
+
+.page-button.active {
+  background: #22c55e;
+
+  border-color: #22c55e;
+
+  color: #052e16;
+}
+
+.page-button:disabled {
+  opacity: 0.35;
+
+  cursor: not-allowed;
+}
+
+.page-dots {
+  padding: 0 6px;
+
+  color: #64748b;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+  margin-top: 50px;
+
+  padding: 45px 20px;
+
+  border-top: 1px solid #1e293b;
+
+  text-align: center;
+
+  color: #64748b;
+
+  font-weight: 700;
+}
+
+footer p {
+  margin-bottom: 0;
+
+  font-weight: normal;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 950px) {
+
+  .games-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+  nav {
+    display: none;
+  }
+
+  .hero {
+    min-height: 430px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .search-box {
+    flex-direction: column;
+  }
+
+  .search-box button {
+    padding: 15px;
+  }
+
+  .section-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .ranking-menu {
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .ranking-button:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .games-grid {
+    grid-template-columns: 1fr;
+  }
+
+}

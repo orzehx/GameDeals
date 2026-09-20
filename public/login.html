@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html lang="pl">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Logowanie - GameDeals
+  </title>
+
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+
+  <link
+    rel="stylesheet"
+    href="auth.css"
+  >
+
+</head>
+
+
+<body>
+
+
+<header>
+
+  <div class="navbar">
+
+    <a
+      href="/"
+      class="logo"
+    >
+      🎮 Game<span>Deals</span>
+    </a>
+
+
+    <nav>
+
+      <a href="/">
+        ← Wróć do gier
+      </a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+
+
+<main class="auth-page">
+
+
+  <div class="auth-container">
+
+
+    <div class="auth-tabs">
+
+      <button
+        id="loginTab"
+        class="auth-tab active"
+      >
+        Logowanie
+      </button>
+
+
+      <button
+        id="registerTab"
+        class="auth-tab"
+      >
+        Rejestracja
+      </button>
+
+    </div>
+
+
+
+    <!-- LOGIN -->
+
+    <section
+      id="loginPanel"
+      class="auth-card"
+    >
+
+      <h1>
+        👋 Witaj ponownie
+      </h1>
+
+
+      <p>
+        Zaloguj się do GameDeals.
+      </p>
+
+
+      <form id="loginForm">
+
+
+        <label>
+          Login lub e-mail
+        </label>
+
+
+        <input
+          id="login"
+          type="text"
+          required
+          autocomplete="username"
+        >
+
+
+        <label>
+          Hasło
+        </label>
+
+
+        <input
+          id="loginPassword"
+          type="password"
+          required
+          autocomplete="current-password"
+        >
+
+
+        <button
+          type="submit"
+          class="auth-submit"
+        >
+          Zaloguj się
+        </button>
+
+
+      </form>
+
+
+      <div
+        id="loginMessage"
+        class="auth-message"
+      ></div>
+
+
+
+      <div class="resend-box">
+
+        <h3>
+          Nie dostałeś maila?
+        </h3>
+
+
+        <form id="resendForm">
+
+          <input
+            id="resendEmail"
+            type="email"
+            placeholder="Twój adres e-mail"
+            required
+          >
+
+
+          <button
+            type="submit"
+            class="resend-button"
+          >
+            Wyślij link ponownie
+          </button>
+
+        </form>
+
+
+        <div
+          id="resendMessage"
+          class="auth-message"
+        ></div>
+
+      </div>
+
+
+    </section>
+
+
+
+    <!-- REGISTER -->
+
+    <section
+      id="registerPanel"
+      class="auth-card hidden"
+    >
+
+      <h1>
+        🎮 Załóż konto
+      </h1>
+
+
+      <p>
+        Po rejestracji wyślemy
+        Ci link aktywacyjny.
+      </p>
+
+
+      <form id="registerForm">
+
+
+        <label>
+          Nazwa użytkownika
+        </label>
+
+
+        <input
+          id="registerUsername"
+          type="text"
+          minlength="3"
+          maxlength="24"
+          required
+          autocomplete="username"
+        >
+
+
+        <label>
+          E-mail
+        </label>
+
+
+        <input
+          id="registerEmail"
+          type="email"
+          required
+          autocomplete="email"
+        >
+
+
+        <label>
+          Hasło
+        </label>
+
+
+        <input
+          id="registerPassword"
+          type="password"
+          minlength="8"
+          required
+          autocomplete="new-password"
+        >
+
+
+        <button
+          type="submit"
+          class="auth-submit"
+        >
+          Utwórz konto
+        </button>
+
+
+      </form>
+
+
+      <div
+        id="registerMessage"
+        class="auth-message"
+      ></div>
+
+
+    </section>
+
+
+  </div>
+
+
+</main>
+
+
+<script src="login.js"></script>
+
+
+</body>
+
+</html>

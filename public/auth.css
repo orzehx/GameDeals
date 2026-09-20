@@ -1,0 +1,416 @@
+    .auth-page {
+  min-height: calc(100vh - 72px);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 50px 20px;
+}
+
+
+.auth-container {
+  width: min(480px, 100%);
+}
+
+
+.auth-tabs {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 8px;
+
+  margin-bottom: 12px;
+
+  padding: 6px;
+
+  border: 1px solid #253044;
+
+  border-radius: 12px;
+
+  background: #0f151f;
+}
+
+
+.auth-tab {
+  padding: 12px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: transparent;
+
+  color: #94a3b8;
+
+  cursor: pointer;
+
+  font-weight: 800;
+}
+
+
+.auth-tab.active {
+  background: #1b2636;
+
+  color: #86efac;
+}
+
+
+.auth-card {
+  padding: 32px;
+
+  border: 1px solid #263247;
+
+  border-radius: 16px;
+
+  background: #101722;
+
+  box-shadow:
+    0 25px 60px
+    rgba(0, 0, 0, 0.35);
+}
+
+
+.auth-card h1 {
+  margin-top: 0;
+}
+
+
+.auth-card > p {
+  color: #94a3b8;
+
+  margin-bottom: 28px;
+}
+
+
+.auth-card form {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+
+.auth-card label {
+  margin-top: 7px;
+
+  color: #cbd5e1;
+
+  font-weight: 700;
+
+  font-size: 14px;
+}
+
+
+.auth-card input {
+  width: 100%;
+
+  padding: 14px 15px;
+
+  border: 1px solid #334155;
+
+  border-radius: 9px;
+
+  outline: none;
+
+  background: #0b111a;
+
+  color: white;
+}
+
+
+.auth-card input:focus {
+  border-color: #22c55e;
+}
+
+
+.auth-submit {
+  margin-top: 15px;
+
+  padding: 14px;
+
+  border: none;
+
+  border-radius: 9px;
+
+  cursor: pointer;
+
+  background: #22c55e;
+
+  color: #052e16;
+
+  font-weight: 900;
+}
+
+
+.auth-submit:hover {
+  background: #4ade80;
+}
+
+
+.auth-message {
+  min-height: 24px;
+
+  margin-top: 16px;
+
+  color: #fca5a5;
+}
+
+
+/* ACCOUNT */
+
+.account-page {
+  width: min(1100px, 92%);
+
+  margin: auto;
+
+  padding: 60px 0;
+}
+
+
+.profile-card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 24px;
+
+  padding: 28px;
+
+  border: 1px solid #263247;
+
+  border-radius: 16px;
+
+  background: #101722;
+}
+
+
+.avatar {
+  width: 80px;
+  height: 80px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #172235;
+
+  font-size: 38px;
+}
+
+
+.profile-card h1 {
+  margin:
+    0 0 7px;
+}
+
+
+.profile-card p {
+  margin:
+    5px 0;
+}
+
+
+.muted {
+  color: #64748b;
+}
+
+
+.account-section {
+  margin-top: 40px;
+}
+
+
+.account-heading h2 {
+  margin-bottom: 7px;
+}
+
+
+.account-heading p {
+  color: #64748b;
+}
+
+
+.watchlist {
+  margin-top: 25px;
+}
+
+
+.empty-watchlist {
+  padding: 50px 25px;
+
+  border: 1px dashed #334155;
+
+  border-radius: 16px;
+
+  text-align: center;
+
+  background: #0e141e;
+
+  color: #94a3b8;
+}
+
+
+.empty-icon {
+  font-size: 45px;
+}
+
+
+.empty-watchlist h3 {
+  color: white;
+}
+
+
+.account-button {
+  display: inline-block;
+
+  margin-top: 15px;
+
+  padding: 12px 18px;
+
+  border-radius: 9px;
+
+  background: #2563eb;
+
+  color: white;
+
+  text-decoration: none;
+
+  font-weight: 800;
+}
+
+
+.watch-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  margin-bottom: 12px;
+
+  padding: 15px;
+
+  border: 1px solid #263247;
+
+  border-radius: 12px;
+
+  background: #111722;
+}
+
+
+.watch-item img {
+  width: 130px;
+
+  height: 60px;
+
+  object-fit: cover;
+
+  border-radius: 7px;
+}
+
+
+.watch-price {
+  margin-top: 7px;
+
+  color: #4ade80;
+
+  font-weight: 800;
+}
+
+
+.logout-button {
+  padding: 9px 13px;
+
+  border: 1px solid #334155;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  background: #111827;
+
+  color: white;
+}   
+
+.auth-message.success {
+  color: #86efac;
+}
+
+
+.resend-box {
+  margin-top: 30px;
+
+  padding-top: 25px;
+
+  border-top:
+    1px solid #263247;
+}
+
+
+.resend-box h3 {
+  margin:
+    0 0 15px;
+
+  font-size:
+    16px;
+}
+
+
+.resend-box form {
+  display: flex;
+
+  gap: 8px;
+}
+
+
+.resend-box input {
+  flex: 1;
+}
+
+
+.resend-button {
+  padding:
+    10px 13px;
+
+  border:
+    1px solid #334155;
+
+  border-radius:
+    8px;
+
+  background:
+    #172033;
+
+  color:
+    white;
+
+  cursor:
+    pointer;
+
+  font-weight:
+    700;
+}
+
+
+.resend-button:hover {
+  background:
+    #243149;
+}
+
+
+@media (max-width: 550px) {
+
+  .resend-box form {
+    flex-direction:
+      column;
+  }
+
+}

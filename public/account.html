@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Moje konto - GameDeals</title>
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="auth.css"
+  >
+
+</head>
+
+
+<body>
+
+
+<header>
+
+  <div class="navbar">
+
+    <a
+      href="/"
+      class="logo"
+    >
+      🎮 Game<span>Deals</span>
+    </a>
+
+
+    <nav>
+
+      <a href="/">
+        Gry
+      </a>
+
+      <button
+        id="logoutButton"
+        class="logout-button"
+      >
+        Wyloguj
+      </button>
+
+    </nav>
+
+  </div>
+
+</header>
+
+
+
+<main class="account-page">
+
+
+  <section class="profile-card">
+
+
+    <div class="avatar">
+      👤
+    </div>
+
+
+    <div>
+
+      <h1 id="username">
+        Ładowanie...
+      </h1>
+
+      <p id="email"></p>
+
+      <p
+        id="created"
+        class="muted"
+      ></p>
+
+    </div>
+
+
+  </section>
+
+
+
+  <section class="account-section">
+
+
+    <div class="account-heading">
+
+      <div>
+
+        <h2>
+          ❤️ Obserwowane gry
+        </h2>
+
+        <p>
+          Tutaj pojawią się gry
+          i alerty cenowe.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div
+      id="watchlist"
+      class="watchlist"
+    ></div>
+
+
+  </section>
+
+
+</main>
+
+
+<script src="account.js"></script>
+
+</body>
+
+</html>

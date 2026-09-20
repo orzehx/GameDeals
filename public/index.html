@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html lang="pl">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>GameDeals</title>
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+</head>
+
+
+<body>
+
+
+<header>
+
+  <div class="navbar">
+
+    <a
+      href="#"
+      class="logo"
+    >
+      🎮 Game<span>Deals</span>
+    </a>
+
+    <nav>
+
+  <a href="#catalog">
+    Gry
+  </a>
+
+  <a href="#catalog">
+    Rankingi
+  </a>
+
+  <a
+  href="/coming-soon.html"
+>
+  👤 Konto — wkrótce
+</a>
+
+</nav>
+
+  </div>
+
+</header>
+
+
+
+<section class="hero">
+
+  <div class="hero-content">
+
+
+    <div class="hero-badge">
+
+      🎮 Steam Game Finder
+
+    </div>
+
+
+    <h1>
+
+      Znajdź swoją
+      <span>następną grę.</span>
+
+    </h1>
+
+
+    <p>
+
+      Aktualne ceny, przeceny,
+      rankingi i katalog Steam.
+
+    </p>
+
+
+    <div class="search-box">
+
+      <input
+        id="searchInput"
+        type="text"
+        placeholder="Wyszukaj grę..."
+        autocomplete="off"
+      >
+
+      <button id="searchButton">
+        Szukaj
+      </button>
+
+    </div>
+
+
+    <div
+      id="catalogInfo"
+      class="catalog-info"
+    >
+
+      Ładowanie danych...
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<main>
+
+
+  <section
+    id="catalog"
+    class="catalog-section"
+  >
+
+
+    <!-- RANKING BUTTONS -->
+
+    <div class="ranking-menu">
+
+
+      <button
+        class="ranking-button active"
+        data-sort="all"
+      >
+        🎮 Wszystkie
+      </button>
+
+
+      <button
+        class="ranking-button"
+        data-sort="price_asc"
+      >
+        💸 Najtańsze
+      </button>
+
+
+      <button
+        class="ranking-button"
+        data-sort="price_desc"
+      >
+        💎 Najdroższe
+      </button>
+
+
+      <button
+        class="ranking-button"
+        data-sort="discount"
+      >
+        🔥 Przeceny
+      </button>
+
+
+      <button
+        class="ranking-button"
+        data-sort="rating"
+      >
+        ⭐ Najlepiej oceniane
+      </button>
+
+
+    </div>
+
+
+
+    <div class="section-header">
+
+      <div>
+
+        <h2 id="sectionTitle">
+          🎮 Wszystkie gry
+        </h2>
+
+        <p id="sectionDescription">
+
+          Przeglądaj cały katalog Steam.
+
+        </p>
+
+      </div>
+
+
+      <button
+        id="backToCatalog"
+        class="secondary-button hidden"
+      >
+
+        ← Wróć
+
+      </button>
+
+    </div>
+
+
+
+    <div
+      id="status"
+      class="status"
+    >
+
+      ⏳ Ładowanie...
+
+    </div>
+
+
+
+    <div
+      id="gamesGrid"
+      class="games-grid"
+    ></div>
+
+
+
+    <div
+      id="pagination"
+      class="pagination"
+    ></div>
+
+
+  </section>
+
+
+</main>
+
+
+
+<footer>
+
+  🎮 Game<span>Deals</span>
+
+  <p>
+    Ceny są pobierane ze Steam.
+  </p>
+
+</footer>
+
+
+<script src="app.js"></script>
+<script src="auth-nav.js"></script>
+
+</body>
+
+</html>
