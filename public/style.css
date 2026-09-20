@@ -703,3 +703,272 @@ footer p {
   }
 
 }
+
+/* =========================================
+   REKLAMY - PLACEHOLDERY
+========================================= */
+
+.ad-container {
+  width: min(1200px, 92%);
+
+  margin: 25px auto 10px;
+}
+
+.ad-inside {
+  width: 100%;
+
+  margin: 45px 0 10px;
+}
+
+.ad-placeholder {
+  min-height: 110px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  padding: 20px;
+
+  border: 1px dashed #334155;
+  border-radius: 13px;
+
+  background: #0d121b;
+
+  color: #64748b;
+
+  text-align: center;
+}
+
+.ad-placeholder span {
+  font-size: 11px;
+
+  letter-spacing: 2px;
+
+  color: #475569;
+}
+
+.ad-placeholder p {
+  margin: 0;
+
+  font-size: 13px;
+}
+
+
+/* =========================================
+   INFO SECTION
+========================================= */
+
+.info-section {
+  padding: 30px 0 70px;
+}
+
+.info-box {
+  padding: 30px;
+
+  border: 1px solid #202938;
+  border-radius: 16px;
+
+  background: #0f141d;
+}
+
+.info-box h2 {
+  margin-top: 0;
+}
+
+.info-box p {
+  color: #94a3b8;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+  margin-top: 40px;
+
+  padding: 45px 20px;
+
+  border-top: 1px solid #1e293b;
+
+  background: #070a10;
+}
+
+.footer-inner {
+  width: min(1200px, 92%);
+
+  margin: auto;
+
+  text-align: center;
+}
+
+.footer-logo {
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.footer-logo span {
+  color: #22c55e;
+}
+
+.footer-links {
+  margin: 25px 0;
+
+  display: flex;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 20px;
+}
+
+.footer-links a {
+  color: #94a3b8;
+
+  text-decoration: none;
+
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  color: #4ade80;
+}
+
+.footer-note {
+  max-width: 700px;
+
+  margin: 20px auto;
+
+  color: #64748b;
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.footer-copy {
+  color: #475569;
+
+  font-size: 13px;
+}
+
+
+/* =========================================
+   LEGAL / STATIC PAGES
+========================================= */
+
+.legal-page {
+  width: min(900px, 92%);
+
+  margin: auto;
+
+  padding: 60px 0 100px;
+}
+
+.legal-page h1 {
+  margin-bottom: 10px;
+
+  font-size: 38px;
+}
+
+.legal-date {
+  margin-bottom: 35px;
+
+  color: #64748b;
+}
+
+.legal-card {
+  padding: 30px;
+
+  border: 1px solid #263247;
+  border-radius: 16px;
+
+  background: #101722;
+}
+
+.legal-card h2 {
+  margin-top: 35px;
+
+  color: #f8fafc;
+}
+
+.legal-card h2:first-child {
+  margin-top: 0;
+}
+
+.legal-card p,
+.legal-card li {
+  color: #cbd5e1;
+
+  line-height: 1.8;
+}
+
+.legal-card a {
+  color: #4ade80;
+}
+
+.legal-warning {
+  margin-top: 25px;
+
+  padding: 16px;
+
+  border: 1px solid #4b3d13;
+  border-radius: 10px;
+
+  background: #211b0d;
+
+  color: #fde68a;
+}
+
+.contact-card {
+  max-width: 650px;
+
+  margin: auto;
+
+  padding: 35px;
+
+  border: 1px solid #263247;
+  border-radius: 16px;
+
+  background: #101722;
+}
+
+.contact-card p {
+  color: #94a3b8;
+
+  line-height: 1.7;
+}
+
+.contact-email {
+  display: inline-block;
+
+  margin-top: 10px;
+
+  color: #4ade80;
+
+  font-size: 19px;
+  font-weight: 800;
+}
+
+
+@media (max-width: 650px) {
+
+  .legal-card {
+    padding: 21px;
+  }
+
+  .legal-page h1 {
+    font-size: 31px;
+  }
+
+}

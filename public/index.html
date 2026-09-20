@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="pl">
 
 <head>
@@ -11,7 +10,14 @@
     content="width=device-width, initial-scale=1.0"
   >
 
-  <title>GameDeals</title>
+  <meta
+    name="description"
+    content="GameDeals pomaga znaleźć gry na Steam, sprawdzać ceny, promocje i rankingi."
+  >
+
+  <title>
+    GameDeals - ceny i promocje gier Steam
+  </title>
 
   <link
     rel="stylesheet"
@@ -29,29 +35,32 @@
   <div class="navbar">
 
     <a
-      href="#"
+      href="/"
       class="logo"
     >
       🎮 Game<span>Deals</span>
     </a>
 
+
     <nav>
 
-  <a href="#catalog">
-    Gry
-  </a>
+      <a href="#catalog">
+        Gry
+      </a>
 
-  <a href="#catalog">
-    Rankingi
-  </a>
+      <a href="#catalog">
+        Rankingi
+      </a>
 
-  <a
-  href="/coming-soon.html"
->
-  👤 Konto — wkrótce
-</a>
+      <a href="/about.html">
+        O nas
+      </a>
 
-</nav>
+      <a href="/coming-soon.html">
+        👤 Konto — wkrótce
+      </a>
+
+    </nav>
 
   </div>
 
@@ -65,9 +74,7 @@
 
 
     <div class="hero-badge">
-
       🎮 Steam Game Finder
-
     </div>
 
 
@@ -81,8 +88,9 @@
 
     <p>
 
-      Aktualne ceny, przeceny,
-      rankingi i katalog Steam.
+      Porównuj aktualne ceny,
+      sprawdzaj promocje
+      i odkrywaj gry dostępne na Steam.
 
     </p>
 
@@ -107,10 +115,28 @@
       id="catalogInfo"
       class="catalog-info"
     >
-
       Ładowanie danych...
-
     </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================
+     MIEJSCE NA PRZYSZŁĄ REKLAMĘ
+===================================== -->
+
+<section class="ad-container">
+
+  <div class="ad-placeholder">
+
+    <span>REKLAMA</span>
+
+    <p>
+      Miejsce przygotowane na reklamę.
+    </p>
 
   </div>
 
@@ -126,8 +152,6 @@
     class="catalog-section"
   >
 
-
-    <!-- RANKING BUTTONS -->
 
     <div class="ranking-menu">
 
@@ -185,9 +209,7 @@
         </h2>
 
         <p id="sectionDescription">
-
-          Przeglądaj cały katalog Steam.
-
+          Przeglądaj katalog gier Steam.
         </p>
 
       </div>
@@ -197,9 +219,7 @@
         id="backToCatalog"
         class="secondary-button hidden"
       >
-
         ← Wróć
-
       </button>
 
     </div>
@@ -210,9 +230,7 @@
       id="status"
       class="status"
     >
-
       ⏳ Ładowanie...
-
     </div>
 
 
@@ -221,6 +239,24 @@
       id="gamesGrid"
       class="games-grid"
     ></div>
+
+
+
+    <!-- DRUGIE MIEJSCE NA REKLAMĘ -->
+
+    <div class="ad-container ad-inside">
+
+      <div class="ad-placeholder">
+
+        <span>REKLAMA</span>
+
+        <p>
+          Miejsce przygotowane na reklamę.
+        </p>
+
+      </div>
+
+    </div>
 
 
 
@@ -233,23 +269,105 @@
   </section>
 
 
+
+  <section class="info-section">
+
+    <div class="info-box">
+
+      <h2>
+        💚 Czym jest GameDeals?
+      </h2>
+
+      <p>
+        GameDeals to niezależny serwis,
+        który pomaga graczom wyszukiwać gry,
+        sprawdzać aktualne ceny
+        i znajdować interesujące promocje.
+      </p>
+
+      <p>
+        Dane o produktach i cenach
+        pobierane są ze Steam.
+        GameDeals nie jest powiązany
+        z Valve Corporation.
+      </p>
+
+    </div>
+
+  </section>
+
+
 </main>
 
 
 
 <footer>
 
-  🎮 Game<span>Deals</span>
+  <div class="footer-inner">
 
-  <p>
-    Ceny są pobierane ze Steam.
-  </p>
+
+    <a
+      href="/"
+      class="footer-logo"
+    >
+      🎮 Game<span>Deals</span>
+    </a>
+
+
+    <div class="footer-links">
+
+      <a href="/about.html">
+        O GameDeals
+      </a>
+
+      <a href="/privacy.html">
+        Polityka prywatności
+      </a>
+
+      <a href="/cookies.html">
+        Cookies
+      </a>
+
+      <a href="/contact.html">
+        Kontakt
+      </a>
+
+    </div>
+
+
+    <p class="footer-note">
+
+      GameDeals jest niezależnym projektem
+      i nie jest powiązany z Valve Corporation.
+
+    </p>
+
+
+    <p class="footer-copy">
+
+      © <span id="currentYear"></span>
+      GameDeals
+
+    </p>
+
+
+  </div>
 
 </footer>
 
 
+
 <script src="app.js"></script>
-<script src="auth-nav.js"></script>
+
+<script>
+
+  document
+    .getElementById("currentYear")
+    .textContent =
+      new Date().getFullYear();
+
+</script>
+
 
 </body>
 
