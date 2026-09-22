@@ -477,28 +477,38 @@ main {
 
 
 /* =========================================
-   STEAM BUTTON
+   CARD ACTIONS
 ========================================= */
 
+.card-actions {
+  margin-top: 19px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 9px;
+}
+
+.details-button,
 .steam-button {
   display: block;
-
-  margin-top: 19px;
-
   padding: 12px;
-
   border-radius: 9px;
-
-  background: #2563eb;
-
   color: white;
-
   text-align: center;
   text-decoration: none;
-
   font-weight: 800;
-
   transition: 0.2s;
+}
+
+.details-button {
+  background: #15803d;
+}
+
+.details-button:hover {
+  background: #16a34a;
+}
+
+.steam-button {
+  background: #2563eb;
 }
 
 .steam-button:hover {
@@ -705,69 +715,48 @@ footer p {
 }
 
 /* =========================================
-   REKLAMY - PLACEHOLDERY
+   EDITORIAL CONTENT
 ========================================= */
 
-.ad-container {
-  width: min(1200px, 92%);
-
-  margin: 25px auto 10px;
+.editorial-section {
+  padding: 35px 0 40px;
 }
 
-.ad-inside {
-  width: 100%;
-
-  margin: 45px 0 10px;
+.editorial-intro {
+  max-width: 760px;
+  margin-bottom: 28px;
 }
 
-.ad-placeholder {
-  min-height: 110px;
-
-  display: flex;
-  flex-direction: column;
-
-  align-items: center;
-  justify-content: center;
-
-  gap: 6px;
-
-  padding: 20px;
-
-  border: 1px dashed #334155;
-  border-radius: 13px;
-
-  background: #0d121b;
-
-  color: #64748b;
-
-  text-align: center;
+.editorial-intro h2,
+.guide-section h2 {
+  margin: 7px 0 14px;
+  font-size: 31px;
 }
 
-.ad-placeholder span {
-  font-size: 11px;
-
-  letter-spacing: 2px;
-
-  color: #475569;
+.editorial-intro > p:last-child,
+.editorial-card p,
+.guide-content p {
+  color: #94a3b8;
+  line-height: 1.75;
 }
 
-.ad-placeholder p {
+.eyebrow {
   margin: 0;
-
+  color: #4ade80;
   font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
 }
 
-
-/* =========================================
-   INFO SECTION
-========================================= */
-
-.info-section {
-  padding: 30px 0 70px;
+.editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
 }
 
-.info-box {
-  padding: 30px;
+.editorial-card {
+  padding: 26px;
 
   border: 1px solid #202938;
   border-radius: 16px;
@@ -775,14 +764,35 @@ footer p {
   background: #0f141d;
 }
 
-.info-box h2 {
+.editorial-card h3 {
+  margin: 14px 0 8px;
+}
+
+.editorial-card p {
+  margin: 0;
+}
+
+.editorial-icon {
+  font-size: 25px;
+}
+
+.guide-section {
+  margin: 35px 0 75px;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: minmax(220px, 0.75fr) 1.5fr;
+  gap: 40px;
+  border: 1px solid #285a3a;
+  border-radius: 16px;
+  background: rgba(20, 83, 45, 0.14);
+}
+
+.guide-content p:first-child {
   margin-top: 0;
 }
 
-.info-box p {
-  color: #94a3b8;
-
-  line-height: 1.7;
+.guide-content p:last-child {
+  margin-bottom: 0;
 }
 
 
@@ -971,4 +981,240 @@ footer {
     font-size: 31px;
   }
 
+  .editorial-grid,
+  .guide-section {
+    grid-template-columns: 1fr;
+  }
+
+  .guide-section {
+    gap: 10px;
+    padding: 23px;
+  }
+
+}
+
+@media (min-width: 651px) and (max-width: 950px) {
+  .editorial-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================
+   GAME DETAILS
+========================================= */
+
+.game-page {
+  min-height: 65vh;
+  padding: 45px 0 80px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 25px;
+  color: #86efac;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.game-detail-hero {
+  display: grid;
+  grid-template-columns: minmax(320px, 1fr) 1.15fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.game-detail-image {
+  position: relative;
+  overflow: hidden;
+  min-height: 260px;
+  border: 1px solid #263247;
+  border-radius: 18px;
+  background: #111827;
+}
+
+.game-detail-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  display: block;
+  object-fit: cover;
+}
+
+.game-detail-image.image-missing img {
+  display: none;
+}
+
+.game-detail-summary h1 {
+  margin: 8px 0 16px;
+  font-size: clamp(35px, 5vw, 56px);
+  line-height: 1.05;
+}
+
+.game-description,
+.panel-intro,
+.price-disclaimer {
+  color: #94a3b8;
+  line-height: 1.7;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 20px 0;
+}
+
+.tag-list span {
+  padding: 7px 10px;
+  border: 1px solid #334155;
+  border-radius: 999px;
+  background: #111827;
+  color: #cbd5e1;
+  font-size: 13px;
+}
+
+.detail-price {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 38px;
+}
+
+.detail-price .price,
+.detail-price .free-price {
+  font-size: 30px;
+}
+
+.detail-actions {
+  max-width: 360px;
+}
+
+.price-disclaimer {
+  margin: 10px 0 0;
+  font-size: 12px;
+}
+
+.verdict-card {
+  margin: 55px 0 25px;
+  padding: 30px;
+  border: 1px solid #285a3a;
+  border-radius: 16px;
+  background: rgba(20, 83, 45, 0.16);
+}
+
+.verdict-card h2 {
+  margin: 8px 0 12px;
+}
+
+.verdict-card > p:last-child {
+  margin-bottom: 0;
+  color: #cbd5e1;
+  line-height: 1.75;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 25px;
+}
+
+.detail-panel {
+  padding: 28px;
+  border: 1px solid #202938;
+  border-radius: 16px;
+  background: #0f141d;
+}
+
+.detail-panel h2 {
+  margin-top: 0;
+}
+
+.facts-list {
+  display: grid;
+  grid-template-columns: minmax(100px, 0.65fr) 1fr;
+  gap: 13px 18px;
+  margin-bottom: 0;
+}
+
+.facts-list dt {
+  color: #64748b;
+}
+
+.facts-list dd {
+  margin: 0;
+  color: #e2e8f0;
+}
+
+.history-chart {
+  display: grid;
+  gap: 13px;
+  margin-top: 22px;
+}
+
+.history-row {
+  display: grid;
+  grid-template-columns: 100px 1fr 85px;
+  gap: 12px;
+  align-items: center;
+  font-size: 13px;
+}
+
+.history-row time {
+  color: #94a3b8;
+}
+
+.history-row strong {
+  text-align: right;
+}
+
+.history-track {
+  height: 10px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #1e293b;
+}
+
+.history-track span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #16a34a, #4ade80);
+}
+
+.empty-note {
+  padding: 20px;
+  border-radius: 10px;
+  background: #111827;
+  color: #94a3b8;
+}
+
+@media (max-width: 800px) {
+  .game-detail-hero,
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .game-detail-hero {
+    gap: 26px;
+  }
+}
+
+@media (max-width: 520px) {
+  .card-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .facts-list,
+  .history-row {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+
+  .facts-list dd {
+    margin-bottom: 9px;
+  }
+
+  .history-row strong {
+    text-align: left;
+  }
 }

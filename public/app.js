@@ -312,19 +312,23 @@ function createGameCard(
       ${ratingHTML}
 
 
-      <a
-        class="steam-button"
+      <div class="card-actions">
+        <a
+          class="details-button"
+          href="/game.html?id=${game.appid}"
+        >
+          Szczegóły i historia
+        </a>
 
-        href="https://store.steampowered.com/app/${game.appid}"
-
-        target="_blank"
-
-        rel="noopener noreferrer"
-      >
-
-        Zobacz na Steam
-
-      </a>
+        <a
+          class="steam-button"
+          href="https://store.steampowered.com/app/${game.appid}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Steam ↗
+        </a>
+      </div>
 
 
     </div>

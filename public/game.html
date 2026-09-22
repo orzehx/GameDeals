@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Szczegóły gry, aktualna cena, komentarz GameDeals i historia zmian ceny.">
+  <title>Szczegóły gry - GameDeals</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <div class="navbar">
+      <a href="/" class="logo">🎮 Game<span>Deals</span></a>
+      <nav>
+        <a href="/#catalog">Gry</a>
+        <a href="/#catalog">Rankingi</a>
+        <a href="/about.html">O nas</a>
+        <a href="/coming-soon.html">👤 Konto — wkrótce</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="game-page">
+    <a class="back-link" href="/#catalog">← Wróć do katalogu</a>
+
+    <div id="gameLoading" class="status">⏳ Pobieram szczegóły gry...</div>
+    <div id="gameError" class="status hidden"></div>
+
+    <article id="gameDetails" class="hidden">
+      <section class="game-detail-hero">
+        <div class="game-detail-image">
+          <img id="gameImage" alt="">
+          <span id="gameDiscount" class="discount hidden"></span>
+        </div>
+
+        <div class="game-detail-summary">
+          <p class="eyebrow">Karta gry GameDeals</p>
+          <h1 id="gameTitle"></h1>
+          <p id="gameDescription" class="game-description"></p>
+          <div id="gameTags" class="tag-list"></div>
+          <div id="gamePrice" class="detail-price"></div>
+          <div class="detail-actions">
+            <a id="steamLink" class="steam-button" target="_blank" rel="noopener noreferrer">Sprawdź aktualną cenę na Steam ↗</a>
+          </div>
+          <p class="price-disclaimer">Cena jest wynikiem ostatniego odczytu skanera. Przed zakupem potwierdź ją w sklepie.</p>
+        </div>
+      </section>
+
+      <section class="verdict-card" aria-labelledby="verdictTitle">
+        <p class="eyebrow">Komentarz redakcyjny</p>
+        <h2 id="verdictTitle">Jak GameDeals ocenia tę ofertę?</h2>
+        <p id="gameVerdict"></p>
+      </section>
+
+      <div class="detail-grid">
+        <section class="detail-panel" aria-labelledby="factsTitle">
+          <h2 id="factsTitle">Najważniejsze informacje</h2>
+          <dl id="gameFacts" class="facts-list"></dl>
+        </section>
+
+        <section class="detail-panel" aria-labelledby="historyTitle">
+          <h2 id="historyTitle">Historia ceny w GameDeals</h2>
+          <p class="panel-intro">Zapisujemy cenę, gdy nasz skaner wykryje jej zmianę.</p>
+          <div id="historyChart" class="history-chart"></div>
+          <div id="historyEmpty" class="empty-note hidden">Historia pojawi się po kolejnych zmianach ceny.</div>
+        </section>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <a href="/" class="footer-logo">🎮 Game<span>Deals</span></a>
+      <div class="footer-links">
+        <a href="/about.html">O GameDeals</a>
+        <a href="/privacy.html">Polityka prywatności</a>
+        <a href="/cookies.html">Cookies</a>
+        <a href="/contact.html">Kontakt</a>
+      </div>
+      <p class="footer-note">GameDeals jest niezależnym projektem i nie jest powiązany z Valve Corporation.</p>
+      <p class="footer-copy">© <span id="currentYear"></span> GameDeals</p>
+    </div>
+  </footer>
+
+  <script src="game.js"></script>
+</body>
+</html>

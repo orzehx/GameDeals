@@ -167,6 +167,36 @@ if (
 }
 
 
+const detailColumns = [
+  ["short_description", "TEXT"],
+  ["developers", "TEXT"],
+  ["publishers", "TEXT"],
+  ["genres", "TEXT"],
+  ["release_date", "TEXT"],
+  ["coming_soon", "INTEGER DEFAULT 0"],
+  ["platforms", "TEXT"],
+  ["recommendations", "INTEGER"]
+];
+
+
+for (const [name, type] of detailColumns) {
+
+  if (
+    !cacheColumns.some(
+      column => column.name === name
+    )
+  ) {
+
+    db.exec(`
+      ALTER TABLE game_cache
+      ADD COLUMN ${name} ${type}
+    `);
+
+  }
+
+}
+
+
 // ======================================================
 // MIGRACJA USERS - EMAIL VERIFICATION
 // ======================================================
@@ -1841,6 +1871,30 @@ function cacheRowToGame(row) {
     metacritic:
       row.metacritic_score,
 
+    description:
+      row.short_description || "",
+
+    developers:
+      parseStoredList(row.developers),
+
+    publishers:
+      parseStoredList(row.publishers),
+
+    genres:
+      parseStoredList(row.genres),
+
+    releaseDate:
+      row.release_date || null,
+
+    comingSoon:
+      Boolean(row.coming_soon),
+
+    platforms:
+      parseStoredList(row.platforms),
+
+    recommendations:
+      row.recommendations ?? null,
+
     price:
 
       row.final_price !== null
@@ -1864,6 +1918,24 @@ function cacheRowToGame(row) {
         : null
 
   };
+
+}
+
+
+function parseStoredList(value) {
+
+  if (!value) {
+    return [];
+  }
+
+
+  try {
+    const parsed = JSON.parse(value);
+    return Array.isArray(parsed) ? parsed : [];
+  }
+  catch {
+    return [];
+  }
 
 }
 
@@ -2124,6 +2196,36 @@ async function getGameDetails(
           ?.score ??
         null,
 
+      description:
+        steamGame.short_description || "",
+
+      developers:
+        steamGame.developers || [],
+
+      publishers:
+        steamGame.publishers || [],
+
+      genres:
+        (steamGame.genres || []).map(
+          genre => genre.description
+        ),
+
+      releaseDate:
+        steamGame.release_date?.date || null,
+
+      comingSoon:
+        steamGame.release_date?.coming_soon === true,
+
+      platforms:
+        Object.entries(
+          steamGame.platforms || {}
+        )
+          .filter(([, enabled]) => enabled)
+          .map(([platform]) => platform),
+
+      recommendations:
+        steamGame.recommendations?.total ?? null,
+
       price
 
     };
@@ -2144,12 +2246,21 @@ async function getGameDetails(
         discount,
 
         checked_at,
-        metacritic_score
+        metacritic_score,
+        short_description,
+        developers,
+        publishers,
+        genres,
+        release_date,
+        coming_soon,
+        platforms,
+        recommendations
 
       )
 
       VALUES (
-        ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+        ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
+        ?, ?, ?, ?, ?, ?, ?, ?
       )
 
       ON CONFLICT(appid)
@@ -2180,7 +2291,31 @@ async function getGameDetails(
           excluded.checked_at,
 
         metacritic_score =
-          excluded.metacritic_score
+          excluded.metacritic_score,
+
+        short_description =
+          excluded.short_description,
+
+        developers =
+          excluded.developers,
+
+        publishers =
+          excluded.publishers,
+
+        genres =
+          excluded.genres,
+
+        release_date =
+          excluded.release_date,
+
+        coming_soon =
+          excluded.coming_soon,
+
+        platforms =
+          excluded.platforms,
+
+        recommendations =
+          excluded.recommendations
 
     `).run(
 
@@ -2206,7 +2341,15 @@ async function getGameDetails(
 
       Date.now(),
 
-      game.metacritic
+      game.metacritic,
+      game.description,
+      JSON.stringify(game.developers),
+      JSON.stringify(game.publishers),
+      JSON.stringify(game.genres),
+      game.releaseDate,
+      game.comingSoon ? 1 : 0,
+      JSON.stringify(game.platforms),
+      game.recommendations
 
     );
 
@@ -2815,6 +2958,72 @@ app.listen(
       backgroundScanner,
       3000
     );
+
+  }
+);
+
+
+// ======================================================
+// GAME PAGE
+// ======================================================
+
+app.get(
+  "/api/game/:appid",
+
+  async (req, res) => {
+
+    const appid = Number(req.params.appid);
+
+
+    if (!Number.isInteger(appid) || appid <= 0) {
+      return res.status(400).json({
+        error: "Nieprawidłowy identyfikator gry."
+      });
+    }
+
+
+    const catalogGame = db.prepare(`
+      SELECT appid, name
+      FROM catalog
+      WHERE appid = ?
+    `).get(appid);
+
+
+    if (!catalogGame) {
+      return res.status(404).json({
+        error: "Nie znaleziono gry w katalogu GameDeals."
+      });
+    }
+
+
+    const cached = db.prepare(`
+      SELECT short_description
+      FROM game_cache
+      WHERE appid = ?
+    `).get(appid);
+
+
+    const game = await getGameDetails(
+      appid,
+      catalogGame.name,
+      !cached?.short_description
+    );
+
+
+    const history = db.prepare(`
+      SELECT final_price, discount, checked_at
+      FROM price_history
+      WHERE appid = ?
+      ORDER BY checked_at ASC
+      LIMIT 100
+    `).all(appid).map(entry => ({
+      price: entry.final_price,
+      discount: entry.discount || 0,
+      checkedAt: entry.checked_at
+    }));
+
+
+    res.json({ game, history });
 
   }
 );
